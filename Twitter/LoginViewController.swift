@@ -10,9 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var onLoginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    }
+    
+    @IBAction func logIn(_ sender: Any) {
         let url="https://api.twitter.com/oauth/request_token"
         TwitterAPICaller.client?.login(url: url, success: {
             
@@ -22,9 +25,8 @@ class LoginViewController: UIViewController {
             print("login failed")
         })
     }
-    
     override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.bool(forKey: "login"){
+        if UserDefaults.standard.bool(forKey: "login")==true{
             self.performSegue(withIdentifier: "loginToHome", sender: self)
         }
     }

@@ -29,6 +29,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logIn:" destination="XfI-V2-8XZ" eventType="touchUpInside" id="Ij3-R6-J6p"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,7 +42,6 @@
                         <viewLayoutGuide key="safeArea" id="YXL-YW-HmZ"/>
                     </view>
                     <connections>
-                        <outlet property="onLoginButton" destination="DPh-DS-IdF" id="pOv-Dz-C2Q"/>
                         <segue destination="p5m-ag-5CU" kind="presentation" identifier="loginToHome" id="O33-jr-nkS"/>
                     </connections>
                 </viewController>
@@ -110,17 +112,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="5Os-as-muu">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="lPx-fi-mFe">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n9P-iM-LFm">
-                                <rect key="frame" x="16" y="4" width="83" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="vGn-sM-m4a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="onLogout:" destination="fzl-DH-9St" id="H29-oM-sPb"/>
+                                <action selector="onLogOut:" destination="fzl-DH-9St" id="ugW-PD-AsH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

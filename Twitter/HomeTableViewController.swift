@@ -61,12 +61,15 @@ class HomeTableViewController: UITableViewController {
         }
     }
 
-    @IBAction func onLogout(_ sender: Any) {
-            TwitterAPICaller.client?.logout()
-            self.dismiss(animated: true, completion: nil)
-            UserDefaults.standard.set(false, forKey: "login")
-        
+
+    @IBAction func onLogOut(_ sender: Any) {
+        TwitterAPICaller.client?.logout()
+        self.dismiss(animated: false, completion: nil)
+        UserDefaults.standard.set(false, forKey:"login" )
+       
+        //
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCellTableViewCell
         let name=tweetArray[indexPath.row]["user"] as! NSDictionary
